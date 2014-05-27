@@ -2,7 +2,14 @@
 <resources>
 
     <string name="app_name">Nightfall-of-the-Final-Conquer</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_content">Roser mola mil </string>
+    <string name="dummy_button">Basura </string>
+
+    <string name="points_skills"> Skill points to use: 10</string>
+    <string name="hp_skills"> 500</string>
+    <string name="mp_skills"> 500</string>
+    <string name="atk_skills"> 50</string>
+    <string name="def_skills"> 50</string>
+    <string name="speed_skills"> 30</string>
 
 </resources>
