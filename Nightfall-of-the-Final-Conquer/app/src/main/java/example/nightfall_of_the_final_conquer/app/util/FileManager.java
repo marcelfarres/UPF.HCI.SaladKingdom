@@ -14,13 +14,18 @@ import java.io.BufferedInputStream;
  */
 public class FileManager {
 
-    public static void openFile() {
+    public static String openFile() {
         File file = new File("/assets/files/database_sql_create.sql");
         InputStream in = null;
+        String text = "";
         try {
-            in = new BufferedInputStream(new FileInputStream(file));
-            //TODO
+            in = new BufferedInputStream(new FileInputStream(file), 8192);
+            in.read(text.getBytes());
+
+            return text;
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         } finally {
             if (in != null) {
