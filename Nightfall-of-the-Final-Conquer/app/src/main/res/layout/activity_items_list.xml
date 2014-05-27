@@ -4,6 +4,19 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<<<<<<< HEAD
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="100dp"
+     >
+
+
+    </ListView>
+=======
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></FrameLayout>
@@ -13,4 +26,5 @@
         android:layout_height="match_parent"
         android:id="@+id/listView"
         android:layout_gravity="center_horizontal" />
+>>>>>>> 587b7397d6486fb08d9f6315bc91c79bb14d188d
 </LinearLayout>
