@@ -4,6 +4,11 @@
     <string name="app_name">Nightfall-of-the-Final-Conquer</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="name_player">Roser</string>
+    <string name="HP"></string>
+    <string name="MP"></string>
+    <string name="ATK"></string>
+    <string name="DEF"></string>
+    <string name="SP"></string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

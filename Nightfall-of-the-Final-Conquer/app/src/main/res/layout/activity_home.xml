@@ -39,31 +39,11 @@
         <ImageView
             android:layout_width="190dp"
             android:layout_height="265dp"
-            android:id="@+id/quickContactBadge"
+            android:id="@+id/avatar"
             android:layout_gravity="left|top"
             android:padding="15dp"
+            android:background="#000"
             />
-
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="40dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/name_player"
-            android:textSize="30sp"
-            android:id="@+id/textView"
-            android:layout_gravity="right|top"
-            android:layout_marginTop="70dp"
-            android:layout_marginRight="15dp" />
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="70dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/textView3"
-            android:layout_marginTop="110dp"
-            android:layout_marginLeft="200dp" />
 
         <Button
             android:text="+"
@@ -75,40 +55,133 @@
             android:layout_width="50dp"
             android:layout_height="50dp" />
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Items"
+        <TextView
+            android:layout_width="168dp"
+            android:layout_height="40dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/name_player"
             android:textSize="30sp"
-            android:id="@+id/button2"
-            android:layout_gravity="left|bottom" />
+            android:textColor="#000"
+            android:gravity="center"
+            android:id="@+id/name_player"
+            android:layout_gravity="right|top"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="15dp" />
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Log"
-            android:textSize="30sp"
-            android:id="@+id/button3"
-            android:layout_gravity="left|bottom"
-            android:layout_marginLeft="95dp" />
+        <TextView
+            android:layout_width="168dp"
+            android:layout_height="40dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Stats:\n "
+            android:textSize="28sp"
+            android:id="@+id/player_stats"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="200dp" />
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Map"
-            android:textSize="30sp"
-            android:id="@+id/button4"
-            android:layout_gravity="left|bottom"
-            android:layout_marginLeft="190dp" />
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="HP:"
+            android:textSize="20sp"
+            android:id="@+id/HP_stat"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="200dp" />
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Monsters"
-            android:textSize="30sp"
-            android:id="@+id/button5"
-            android:layout_gravity="left|bottom"
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/HP"
+            android:textSize="20sp"
+            android:id="@+id/HP_stat_value"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="235dp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="MP:"
+            android:textSize="20sp"
+            android:id="@+id/MP_stat"
+            android:layout_marginTop="160dp"
             android:layout_marginLeft="285dp" />
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/MP"
+            android:textSize="20sp"
+            android:id="@+id/MP_stat_value"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="325dp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="ATK:"
+            android:textSize="20sp"
+            android:id="@+id/ATK_stat"
+            android:layout_marginTop="195dp"
+            android:layout_marginLeft="200dp" />
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/ATK"
+            android:textSize="20sp"
+            android:id="@+id/ATK_stat_value"
+            android:layout_marginTop="195dp"
+            android:layout_marginLeft="246dp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="DEF:"
+            android:textSize="20sp"
+            android:id="@+id/DEF_stat"
+            android:layout_marginTop="195dp"
+            android:layout_marginLeft="285dp" />
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/DEF"
+            android:textSize="20sp"
+            android:id="@+id/DEF_stat_value"
+            android:layout_marginTop="195dp"
+            android:layout_marginLeft="330dp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="SP:"
+            android:textSize="20sp"
+            android:id="@+id/SP_stat"
+            android:layout_marginTop="230dp"
+            android:layout_marginLeft="200dp" />
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/SP"
+            android:textSize="20sp"
+            android:id="@+id/SP_stat_value"
+            android:layout_marginTop="230dp"
+            android:layout_marginLeft="235dp"
+            android:textColor="#000" />
 
         <TextView
             android:layout_marginTop="90dp"
@@ -118,6 +191,47 @@
             android:text="Large Text"
             android:id="@+id/textView2"
             android:layout_gravity="left|center_vertical" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Items"
+            android:textSize="17sp"
+            android:id="@+id/button_item"
+            android:layout_gravity="left|bottom"
+            android:background="#500" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Log"
+            android:textSize="17sp"
+            android:id="@+id/button_log"
+            android:layout_gravity="left|bottom"
+            android:layout_marginLeft="95dp"
+            android:background="#040" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Map"
+            android:textSize="17sp"
+            android:id="@+id/button_map"
+            android:layout_gravity="left|bottom"
+            android:layout_marginLeft="190dp"
+            android:background="#005" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Monsters"
+            android:textSize="17sp"
+            android:id="@+id/button_monsters"
+            android:layout_gravity="left|bottom"
+            android:layout_marginLeft="285dp"
+            android:background="#975" />
+
+
 
 
 
