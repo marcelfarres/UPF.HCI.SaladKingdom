@@ -14,8 +14,8 @@ import java.io.BufferedInputStream;
  */
 public class FileManager {
 
-    public static String openFile() {
-        File file = new File("/assets/files/database_sql_create.sql");
+    public static String openFile(String filePath) {
+        File file = new File(filePath);
         InputStream in = null;
         String text = "";
         try {
@@ -38,4 +38,4 @@ public class FileManager {
         }
     }
 }
-}
+

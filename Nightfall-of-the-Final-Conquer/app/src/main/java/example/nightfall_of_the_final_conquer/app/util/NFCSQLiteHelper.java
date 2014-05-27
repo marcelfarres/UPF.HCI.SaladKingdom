@@ -19,7 +19,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL(sqlCreate);
+        db.execSQL(FileManager.openFile("assets/files/database_sql_create.sql"));
     }
 
     @Override
