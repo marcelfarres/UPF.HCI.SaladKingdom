@@ -11,13 +11,15 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class NFCSQLiteHelper extends SQLiteOpenHelper {
 
+    String sqlCreate = "";
+
     public NFCSQLiteHelper(Context context, String name, CursorFactory cursorFactory, int version){
         super(context, name, cursorFactory, version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db){
-
+        db.execSQL(sqlCreate);
     }
 
     @Override
