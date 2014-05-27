@@ -3,6 +3,7 @@
 
     <string name="app_name">Nightfall-of-the-Final-Conquer</string>
     <string name="dummy_button">Dummy Button</string>
+    <string name="name_player">Roser</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>
