@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 
 /**
@@ -58,6 +59,9 @@ public class home extends Activity {
 
         dbHelper = new NFCSQLiteHelper(this, "DBGame", null, 1);
         String name_player = dbHelper.getPlayerName();
+
+        TextView name_player_view = (TextView)findViewById(R.id.name_player);
+        name_player_view.setText(name_player);
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_content);
