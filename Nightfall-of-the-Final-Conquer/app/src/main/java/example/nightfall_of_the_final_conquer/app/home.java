@@ -4,6 +4,7 @@ import example.nightfall_of_the_final_conquer.app.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -51,6 +52,8 @@ public class home extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
+
+        Cursor c = db.rawQuery(" SELECT codigo,nombre FROM Usuarios WHERE nombre='usu1' ", null);
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_content);
