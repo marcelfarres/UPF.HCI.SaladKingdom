@@ -1,5 +1,6 @@
 package example.nightfall_of_the_final_conquer.app;
 
+import example.nightfall_of_the_final_conquer.app.util.NFCSQLiteHelper;
 import example.nightfall_of_the_final_conquer.app.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -47,13 +48,16 @@ public class home extends Activity {
      */
     private SystemUiHider mSystemUiHider;
 
+    private NFCSQLiteHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
 
-        Cursor c = db.rawQuery(" SELECT codigo,nombre FROM Usuarios WHERE nombre='usu1' ", null);
+        dbHelper = new NFCSQLiteHelper(this, "DBGame", null, 1);
+        String name_player = dbHelper.getPlayerName();
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_content);
