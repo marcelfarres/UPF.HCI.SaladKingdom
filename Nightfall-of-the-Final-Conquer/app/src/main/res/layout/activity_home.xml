@@ -15,8 +15,7 @@
         android:textColor="#33b5e5"
         android:textStyle="bold"
         android:textSize="50sp"
-        android:gravity="center"
-        android:text="@string/dummy_content" />
+        android:gravity="center" />
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
@@ -25,16 +24,6 @@
         android:fitsSystemWindows="true"
         android:layout_gravity="left|bottom">
 
-        <LinearLayout android:id="@+id/fullscreen_content_controls"
-            style="?metaButtonBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
-
-        </LinearLayout>
 
         <ImageView
             android:layout_width="190dp"
@@ -184,55 +173,75 @@
             android:textColor="#000" />
 
         <TextView
-            android:layout_marginTop="90dp"
-            android:layout_width="376dp"
-            android:layout_height="160dp"
+            android:layout_marginTop="85dp"
+            android:layout_width="380dp"
+            android:layout_height="150dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/textView2"
             android:layout_gravity="left|center_vertical" />
 
-        <Button
-            android:layout_width="100dp"
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
             android:layout_height="100dp"
-            android:text="Items"
-            android:textSize="17sp"
-            android:id="@+id/button_item"
-            android:layout_gravity="left|bottom"
-            android:background="#500" />
+            android:layout_gravity="bottom">
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Log"
-            android:textSize="17sp"
-            android:id="@+id/button_log"
-            android:layout_gravity="left|bottom"
-            android:layout_marginLeft="95dp"
-            android:background="#040" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Map"
-            android:textSize="17sp"
-            android:id="@+id/button_map"
-            android:layout_gravity="left|bottom"
-            android:layout_marginLeft="190dp"
-            android:background="#005" />
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Items"
+                    android:textSize="17sp"
+                    android:id="@+id/button_item"
+                    android:layout_gravity="left|bottom"
+                    android:background="#500"
+                    android:clickable="true"
+                    android:layout_weight="1"/>
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Monsters"
-            android:textSize="17sp"
-            android:id="@+id/button_monsters"
-            android:layout_gravity="left|bottom"
-            android:layout_marginLeft="285dp"
-            android:background="#975" />
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Log"
+                    android:textSize="17sp"
+                    android:id="@+id/button_log"
+                    android:layout_gravity="left|bottom"
+                    android:background="#040"
+                    android:clickable="true"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Map"
+                    android:textSize="17sp"
+                    android:id="@+id/button_map"
+                    android:layout_gravity="left|bottom"
+                    android:background="#005"
+                    android:clickable="true"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Monsters"
+                    android:textSize="17sp"
+                    android:id="@+id/button_monsters"
+                    android:layout_gravity="left|bottom"
+                    android:background="#975"
+                    android:clickable="true"
+                    android:layout_weight="1"/>
 
 
+            </LinearLayout>
 
+
+        </RelativeLayout>
 
 
     </FrameLayout>

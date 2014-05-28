@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Nightfall-of-the-Final-Conquer</string>
-<<<<<<< HEAD
     <string name="dummy_content">Roser mola mil </string>
     <string name="dummy_button">Basura </string>
 
@@ -12,15 +11,11 @@
     <string name="atk_skills"> 50</string>
     <string name="def_skills"> 50</string>
     <string name="speed_skills"> 30</string>
-=======
-    <string name="dummy_button">Dummy Button</string>
     <string name="name_player">Roser</string>
-    <string name="HP"></string>
-    <string name="MP"></string>
-    <string name="ATK"></string>
-    <string name="DEF"></string>
-    <string name="SP"></string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
->>>>>>> 587b7397d6486fb08d9f6315bc91c79bb14d188d
+    <string name="HP"> </string>
+    <string name="MP"> </string>
+    <string name="ATK"> </string>
+    <string name="DEF"> </string>
+    <string name="SP"> </string>
 
 </resources>

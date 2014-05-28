@@ -21,7 +21,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db){
         this.db = db;
-        db.execSQL(FileManager.openFile("assets/files/database_sql_create.sql"));
+        db.execSQL(FileManager.openFile("./assets/files/database_sql_create.sql"));
 
         db.execSQL("INSERT INTO User (id, email, name) VALUES (1, 'naulacambra@gmail.com', 'Arnau')");
     }
