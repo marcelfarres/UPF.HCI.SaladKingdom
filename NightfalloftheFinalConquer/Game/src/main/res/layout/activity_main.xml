@@ -1,216 +1,153 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#0099cc"
-    tools:context="example.nightfall_of_the_final_conquer.app.home">
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#0099cc"
+tools:context="example.nightfall_of_the_final_conquer.app.home">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-    <TextView android:id="@+id/fullscreen_content"
+    <include layout="@layout/toolbar_menu" />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:keepScreenOn="true"
-        android:textColor="#33b5e5"
-        android:textStyle="bold"
-        android:textSize="50sp"
-        android:gravity="center" />
+        android:layout_height="269dp"
+        android:orientation="horizontal">
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <FrameLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:layout_gravity="left|bottom">
+        <RelativeLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:layout_weight="1">
 
-
-        <ImageView
-            android:layout_width="190dp"
-            android:layout_height="265dp"
-            android:id="@+id/avatar"
-            android:layout_gravity="left|top"
-            android:padding="15dp"
-            android:background="#000"
-            />
-
-        <Button
-            android:text="+"
-            android:textSize="30sp"
-            android:id="@+id/button+"
-            android:layout_gravity="right|top"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="60dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/name_player"
-            android:textSize="40sp"
-            android:textColor="#000"
-            android:gravity="center"
-            android:id="@+id/name_player"
-            android:layout_gravity="right|top"
-            android:layout_marginTop="70dp"
-            android:layout_marginRight="15dp" />
-
-
-        <TableLayout
-            android:layout_width="181dp"
-            android:layout_height="155dp"
-            android:layout_gravity="right|top"
-            android:layout_marginTop="130dp">
-
-            <TableRow>
-                <TextView
-                    android:text="Stats"
-                    android:layout_gravity="center"
-                    android:layout_span="4"
-                    android:textSize="30sp"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    android:text="@string/HP"
-                    android:textColor="#000"
-                    android:layout_span="1"
-                    android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/HP_value"
-                    android:layout_span="1"
-                    android:textSize="20sp"
-                    android:text="000"
-                    android:layout_marginRight="5sp"/>
-                <TextView
-                    android:text="@string/MP"
-                    android:textColor="#000"
-                    android:layout_span="1"
-                    android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/MP_value"
-                    android:layout_span="1"
-                    android:textSize="20sp"
-                    android:text="000"
-                    android:layout_marginRight="5sp"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    android:text="@string/ATK"
-                    android:textColor="#000"
-                    android:layout_span="1"
-                    android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/ATK_value"
-                    android:layout_span="1"
-                    android:textSize="20sp"
-                    android:text="000"
-                    android:layout_marginRight="5sp"/>
-                <TextView
-                    android:text="@string/DEF"
-                    android:textColor="#000"
-                    android:layout_span="1"
-                    android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/DEF_value"
-                    android:layout_span="1"
-                    android:textSize="20sp"
-                    android:text="000"
-                    android:layout_marginRight="5sp"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    android:text="@string/SP"
-                    android:textColor="#000"
-                    android:layout_span="1"
-                    android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/SP_value"
-                    android:layout_span="1"
-                    android:textSize="20sp"
-                    android:text="000"
-                    android:layout_marginRight="5sp"/>
-            </TableRow>
-
-        </TableLayout>
-
-        <TableLayout
-            android:layout_width="382dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="88dp">
-
-        </TableLayout>
-
-
-        <RelativeLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="100dp"
-            android:layout_gravity="bottom">
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true">
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:text="Items"
-                    android:textSize="17sp"
-                    android:id="@+id/button_item"
-                    android:layout_gravity="left|bottom"
-                    android:background="#500"
-                    android:clickable="true"
-                    android:layout_weight="1"/>
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:text="Log"
-                    android:textSize="17sp"
-                    android:id="@+id/button_log"
-                    android:layout_gravity="left|bottom"
-                    android:background="#040"
-                    android:clickable="true"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:text="Map"
-                    android:textSize="17sp"
-                    android:id="@+id/button_map"
-                    android:layout_gravity="left|bottom"
-                    android:background="#005"
-                    android:clickable="true"
-                    android:layout_weight="1"/>
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:text="Monsters"
-                    android:textSize="17sp"
-                    android:id="@+id/button_monsters"
-                    android:layout_gravity="left|bottom"
-                    android:background="#975"
-                    android:clickable="true"
-                    android:layout_weight="1"/>
-
-
-            </LinearLayout>
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_height="265dp"
+                android:id="@+id/avatar"
+                android:layout_gravity="left|top"
+                android:padding="15dp"
+                android:background="#000" />
         </RelativeLayout>
 
+        <RelativeLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:layout_weight="1">
+
+            <Button
+                android:text="+"
+                android:textSize="30sp"
+                android:id="@+id/button"
+                android:layout_gravity="right|top"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/tableLayout" />
+
+            <TextView
+                android:layout_width="168dp"
+                android:layout_height="60dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/name_player"
+                android:textSize="40sp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:id="@+id/name_player"
+                android:layout_gravity="right|top"
+                android:layout_below="@+id/button"
+                android:layout_centerHorizontal="true" />
 
 
+            <TableLayout
+                android:layout_width="181dp"
+                android:layout_height="155dp"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="130dp"
+                android:id="@+id/tableLayout">
 
-    </FrameLayout>
+                <TableRow>
+                    <TextView
+                        android:text="Stats"
+                        android:layout_gravity="center"
+                        android:layout_span="4"
+                        android:textSize="30sp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="@string/HP"
+                        android:textColor="#000"
+                        android:layout_span="1"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/HP_value"
+                        android:layout_span="1"
+                        android:textSize="20sp"
+                        android:text="000"
+                        android:layout_marginRight="5sp"/>
+                    <TextView
+                        android:text="@string/MP"
+                        android:textColor="#000"
+                        android:layout_span="1"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/MP_value"
+                        android:layout_span="1"
+                        android:textSize="20sp"
+                        android:text="000"
+                        android:layout_marginRight="5sp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="@string/ATK"
+                        android:textColor="#000"
+                        android:layout_span="1"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/ATK_value"
+                        android:layout_span="1"
+                        android:textSize="20sp"
+                        android:text="000"
+                        android:layout_marginRight="5sp"/>
+                    <TextView
+                        android:text="@string/DEF"
+                        android:textColor="#000"
+                        android:layout_span="1"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/DEF_value"
+                        android:layout_span="1"
+                        android:textSize="20sp"
+                        android:text="000"
+                        android:layout_marginRight="5sp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="@string/SP"
+                        android:textColor="#000"
+                        android:layout_span="1"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/SP_value"
+                        android:layout_span="1"
+                        android:textSize="20sp"
+                        android:text="000"
+                        android:layout_marginRight="5sp"/>
+                </TableRow>
+
+            </TableLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="382dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="88dp">
+
+    </TableLayout>
 
 </FrameLayout>
+
