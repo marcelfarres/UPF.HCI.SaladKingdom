@@ -5,7 +5,9 @@ android:layout_height="match_parent"
 android:background="#0099cc"
 tools:context="example.nightfall_of_the_final_conquer.app.home">
 
-    <include layout="@layout/toolbar_menu" />
+    <include layout="@layout/toolbar_menu"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content" />
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,12 +22,12 @@ tools:context="example.nightfall_of_the_final_conquer.app.home">
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="190dp"
-                android:layout_height="265dp"
-                android:id="@+id/avatar"
-                android:layout_gravity="left|top"
-                android:padding="15dp"
-                android:background="#000" />
+            android:layout_width="190dp"
+            android:layout_height="265dp"
+            android:id="@+id/avatar"
+            android:layout_gravity="left|top"
+            android:padding="15dp"
+            android:background="#000" />
         </RelativeLayout>
 
         <RelativeLayout android:orientation="vertical"
