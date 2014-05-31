@@ -1,5 +1,6 @@
 package example.nightfall_of_the_final_conquer.app;
 
+import example.nightfall_of_the_final_conquer.app.util.FileManager;
 import example.nightfall_of_the_final_conquer.app.util.NFCSQLiteHelper;
 import example.nightfall_of_the_final_conquer.app.util.SystemUiHider;
 
@@ -54,6 +55,9 @@ public class home extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //set file manager
+        FileManager.context = this;
 
         setContentView(R.layout.activity_home);
 

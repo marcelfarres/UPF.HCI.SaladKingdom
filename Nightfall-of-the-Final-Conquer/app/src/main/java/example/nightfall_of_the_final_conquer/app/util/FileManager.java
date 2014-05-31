@@ -35,7 +35,7 @@ public class FileManager {
         }
         catch (Exception ex)
         {
-            Log.e("Ficheros", "Error al leer fichero desde recurso raw");
+            Log.e("Ficheros", "Error al leer fichero desde recurso raw: " + ex.getMessage());
         }
 
         /*File file = new File(filePath);
