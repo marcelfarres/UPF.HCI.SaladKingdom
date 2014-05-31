@@ -15,14 +15,15 @@
         android:layout_height="423dp"
         android:id="@+id/list_items"
         android:layout_gravity="center_horizontal|top"
-        android:clickable=""/>
+        android:clickable="true"/>
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-    <FrameLayout android:layout_width="match_parent"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:layout_gravity="left|bottom">
+        android:layout_gravity="left|bottom" >
 
     <Button
         android:layout_width="100dp"
@@ -31,7 +32,9 @@
         android:textSize="17sp"
         android:id="@+id/button_item"
         android:layout_gravity="left|bottom"
-        android:background="#500" />
+        android:background="#500"
+        android:clickable="true"
+        android:onClick="activity_items_list"/>
 
         <Button
             android:layout_width="100dp"
@@ -41,7 +44,8 @@
             android:id="@+id/button_log"
             android:layout_gravity="left|bottom"
             android:layout_marginLeft="95dp"
-            android:background="#040" />
+            android:background="#040"
+            android:clickable="true"/>
 
         <Button
             android:layout_width="100dp"
@@ -51,7 +55,8 @@
             android:id="@+id/button_map"
             android:layout_gravity="left|bottom"
             android:layout_marginLeft="190dp"
-            android:background="#005" />
+            android:background="#005"
+            android:clickable="true"/>
 
         <Button
             android:layout_width="100dp"
@@ -61,7 +66,8 @@
             android:id="@+id/button_monsters"
             android:layout_gravity="left|bottom"
             android:layout_marginLeft="285dp"
-            android:background="#975" />
+            android:background="#975"
+            android:clickable="true"/>
 
 
     </FrameLayout>
