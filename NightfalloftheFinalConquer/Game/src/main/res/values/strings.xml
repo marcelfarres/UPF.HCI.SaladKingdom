@@ -3,7 +3,7 @@
 
     <string name="app_name">Nightfall-of-the-Final-Conquer</string>
 
-    <string name="points_skills"> Skill points to use: 10</string>
+    <string name="points_skills">10</string>
     <string name="hp_skills"> 500</string>
     <string name="mp_skills"> 500</string>
     <string name="atk_skills"> 50</string>

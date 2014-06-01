@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="example.nightfall_of_the_final_conquer.app.home">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Items"
+                    android:textSize="17sp"
+                    android:gravity="center"
+                    android:id="@+id/button_item"
+                    android:background="#500"
+                    android:clickable="true"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Log"
+                    android:textSize="17sp"
+                    android:id="@+id/button_log"
+                    android:gravity="center"
+                    android:layout_gravity="left|bottom"
+                    android:background="#040"
+                    android:clickable="true"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Map"
+                    android:textSize="17sp"
+                    android:gravity="center"
+                    android:id="@+id/button_map"
+                    android:layout_gravity="left|bottom"
+                    android:background="#005"
+                    android:clickable="true"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Monsters"
+                    android:textSize="17sp"
+                    android:gravity="center"
+                    android:id="@+id/button_monsters"
+                    android:layout_gravity="left|bottom"
+                    android:background="#975"
+                    android:clickable="true"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
