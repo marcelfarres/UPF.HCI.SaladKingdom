@@ -8,44 +8,7 @@
     tools:context="example.nightfall_of_the_final_conquer.app.home">
 
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Items"
-        android:textSize="17sp"
-        android:id="@+id/button_item"
-        android:layout_gravity="left|bottom"
-        android:background="#500" />
-
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Log"
-        android:textSize="17sp"
-        android:id="@+id/button_log"
-        android:layout_gravity="left|bottom"
-        android:layout_marginLeft="95dp"
-        android:background="#040" />
-
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Map"
-        android:textSize="17sp"
-        android:id="@+id/button_map"
-        android:layout_gravity="left|bottom"
-        android:layout_marginLeft="190dp"
-        android:background="#005" />
-
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Monsters"
-        android:textSize="17sp"
-        android:id="@+id/button_monsters"
-        android:layout_gravity="left|bottom"
-        android:layout_marginLeft="285dp"
-        android:background="#975" />
+    <include layout="@layout/toolbar_menu" />
 
     <LinearLayout
         android:keepScreenOn="true"
@@ -65,25 +28,25 @@
             android:layout_margin="30dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Skill points to use: "
                 android:gravity="center"
-                android:layout_weight="0.1"
+                android:layout_weight="1"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textColor="#fff"
                 android:textSize="25sp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/points_skills"
                 android:id="@+id/points_to_use"
                 android:gravity="center"
-                android:layout_weight="0.1"
+                android:layout_weight="2"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textColor="#fff"
