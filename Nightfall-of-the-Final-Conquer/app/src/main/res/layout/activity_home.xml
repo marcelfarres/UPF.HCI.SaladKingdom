@@ -79,7 +79,7 @@
                     android:layout_span="1"
                     android:textSize="20sp" />
                 <TextView
-                    android:text=" 299 "
+                    android:text="299"
                     android:layout_span="1"
                     android:textSize="20sp" />
                 <TextView
