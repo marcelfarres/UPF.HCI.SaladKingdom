@@ -16,5 +16,137 @@
         android:layout_height="269dp"
         android:orientation="horizontal">
 
-        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="190dp"
+                android:layout_height="265dp"
+                android:layout_gravity="left|top"
+                android:background="#000"
+                android:padding="15dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="181dp"
+                android:layout_height="200dp"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="30dp"
+                android:gravity="center">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_span="1"
+                        android:text="@string/HP"
+                        android:textColor="#000"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/HP_value"
+                        android:layout_marginRight="5sp"
+                        android:layout_span="1"
+                        android:text="000"
+                        android:textSize="30sp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_span="1"
+                        android:text="@string/MP"
+                        android:textColor="#000"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/MP_value"
+                        android:layout_marginRight="5sp"
+                        android:layout_span="1"
+                        android:text="000"
+                        android:textSize="30sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_span="1"
+                        android:text="@string/ATK"
+                        android:textColor="#000"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/ATK_value"
+                        android:layout_marginRight="5sp"
+                        android:layout_span="1"
+                        android:text="000"
+                        android:textSize="30sp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_span="1"
+                        android:text="@string/DEF"
+                        android:textColor="#000"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/DEF_value"
+                        android:layout_marginRight="5sp"
+                        android:layout_span="1"
+                        android:text="000"
+                        android:textSize="30sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_span="1"
+                        android:text="@string/SP"
+                        android:textColor="#000"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/SP_value"
+                        android:layout_marginRight="5sp"
+                        android:layout_span="1"
+                        android:text="000"
+                        android:textSize="30sp" />
+                </TableRow>
+
+            </TableLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/description_item"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="left|center_vertical"
+        android:textSize="20sp"
+        android:layout_marginTop="57dp"
+        android:text="holaaaaaa">
+
+        </TextView>
+
+    <Button
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:text="button_team"
+        android:id="@+id/button_team"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="105dp"
+        android:background="#DC0"/>
 </FrameLayout>
