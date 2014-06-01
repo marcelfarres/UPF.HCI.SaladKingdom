@@ -1,69 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:background="#0099cc"
+    tools:context="example.nightfall_of_the_final_conquer.app.home">
 
-    <TextView
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="30dp"
-        android:text="@string/points_skills"
-        android:id="@+id/skill_points"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_weight="0.1"
-        android:layout_margin="20dp"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Items"
+        android:textSize="17sp"
+        android:id="@+id/button_item"
+        android:layout_gravity="left|bottom"
+        android:background="#500" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Log"
+        android:textSize="17sp"
+        android:id="@+id/button_log"
+        android:layout_gravity="left|bottom"
+        android:layout_marginLeft="95dp"
+        android:background="#040" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Map"
+        android:textSize="17sp"
+        android:id="@+id/button_map"
+        android:layout_gravity="left|bottom"
+        android:layout_marginLeft="190dp"
+        android:background="#005" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Monsters"
+        android:textSize="17sp"
+        android:id="@+id/button_monsters"
+        android:layout_gravity="left|bottom"
+        android:layout_marginLeft="285dp"
+        android:background="#975" />
 
     <LinearLayout
         android:keepScreenOn="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation = "horizontal"
-        android:id="@+id/hp_skill_point"
-        android:background="@color/blue">
+        android:orientation = "vertical"
+        android:id="@+id/table_skill_point"
+        android:layout_gravity="center_horizontal|top">
 
         <TextView
             android:layout_width="350dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="HP: "
-            android:gravity="center"
+            android:textSize="30sp"
+            android:text="@string/points_skills"
+            android:id="@+id/skill_points"
+            android:gravity="center_horizontal|center_vertical"
             android:layout_weight="0.1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textSize="25dp"/>
+            android:textColor="#fff"
+            android:layout_margin="20dp"/>
 
-
-        <Button
+        <LinearLayout
+            android:keepScreenOn="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:textSize="30dp"
-            android:onClick=""
-            android:clickable="true"
-            />
+            android:orientation = "horizontal"
+            android:id="@+id/hp_skill_point">
 
-        <TextView
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/hp_skills"
-            android:gravity="center"
-            android:layout_weight="0.1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="HP: "
+                android:gravity="center"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="#fff"
+                android:textSize="25sp"/>
 
-        <Button
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hp_minus"
+                android:text="-"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/hp_skills"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hp_plus"
+                android:text="+"
+                android:layout_marginRight="20dp"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:keepScreenOn="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:layout_marginRight="20dp"
-            android:textSize="30dp"
-            android:onClick=""
-            android:clickable="true" />
+            android:orientation = "horizontal"
+            android:id="@+id/mp_skill_point">
 
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="MP: "
+                android:textColor="#fff"
+                android:gravity="center"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="25sp"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mp_minus"
+                android:text="-"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/mp_skills"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mp_plus"
+                android:text="+"
+                android:layout_marginRight="20dp"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:keepScreenOn="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation = "horizontal"
+            android:id="@+id/atk_skill_point">
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="ATK: "
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="25sp"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/atk_minus"
+                android:text="-"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/atk_skills"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/atk_plus"
+                android:text="+"
+                android:layout_marginRight="20dp"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:keepScreenOn="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation = "horizontal"
+            android:id="@+id/def_skill_point">
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="DEF: "
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="25sp"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/def_minus"
+                android:text="-"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/def_skills"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/def_plus"
+                android:text="+"
+                android:layout_marginRight="20dp"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:keepScreenOn="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation = "horizontal"
+            android:id="@+id/sp_skill_point">
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="SP: "
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="25sp"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_minus"
+                android:text="-"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/speed_skills"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="0.1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_plus"
+                android:text="+"
+                android:layout_marginRight="20dp"
+                android:textSize="30sp"
+                android:onClick=""
+                android:background="#ffffab00"
+                android:clickable="true" />
+
+
+        </LinearLayout>
     </LinearLayout>
- </LinearLayout>
+
+</FrameLayout>
+
