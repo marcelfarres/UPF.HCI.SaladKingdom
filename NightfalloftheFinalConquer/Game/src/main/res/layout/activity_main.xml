@@ -46,11 +46,11 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="right|top"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="130dp"
                 android:text="+"
                 android:textSize="30sp"
-                android:background="#506"/>
+                android:background="#506" />
 
             <TextView
                 android:id="@+id/name_player"

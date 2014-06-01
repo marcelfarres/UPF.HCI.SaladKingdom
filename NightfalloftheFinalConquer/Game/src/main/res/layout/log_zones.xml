@@ -47,7 +47,7 @@
         android:layout_gravity="center_horizontal|top"
         android:id="@+id/list_recentActivities"
         android:fadeScrollbars="false"
-        android:clickable="true"
+        android:clickable="false"
         android:layout_marginTop="250dp">
     </ListView>
 
