@@ -37,7 +37,7 @@
         <Button
             android:text="+"
             android:textSize="30sp"
-            android:id="@+id/button+"
+            android:id="@+id/button"
             android:layout_gravity="right|top"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
@@ -48,7 +48,7 @@
             android:layout_width="168dp"
             android:layout_height="60dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/name_player"
+            android:text="Roser"
             android:textSize="40sp"
             android:textColor="#000"
             android:gravity="center"
