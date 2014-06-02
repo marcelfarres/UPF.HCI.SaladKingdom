@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="example.nightfall_of_the_final_conquer.app.home">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top">
+
+
+
+            <LinearLayout
+                android:keepScreenOn="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation = "horizontal"
+                android:id="@+id/discovered_monsters_row"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Discovered monsters: "
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="#fff"
+                    android:textSize="25sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/discovered_monsters"
+                    android:id="@+id/number_discovered_monsters"
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="#fff"
+                    android:textSize="25sp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:keepScreenOn="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation = "horizontal"
+                android:id="@+id/total_monsters_row"
+                android:layout_gravity="center"
+                android:layout_below="@+id/discovered_monsters_row"
+                android:layout_alignRight="@+id/discovered_monsters_row"
+                android:layout_alignEnd="@+id/discovered_monsters_row"
+                android:layout_alignLeft="@+id/discovered_monsters_row"
+                android:layout_alignStart="@+id/discovered_monsters_row"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Total monsters: "
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="#fff"
+                    android:textSize="25sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/number_total_monsters"
+                    android:id="@+id/number_total_monsters"
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="#fff"
+                    android:textSize="25sp"/>
+
+
+            </LinearLayout>
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/list_monsters"
+            android:fadeScrollbars="false"
+            android:clickable="true"
+
+            android:layout_below="@+id/total_monsters_row"
+            android:layout_alignLeft="@+id/total_monsters_row"
+            android:layout_alignStart="@+id/total_monsters_row">
+        </ListView>
+
+        <include layout="@layout/toolbar_menu"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignBottom="@id/list_monsters"/>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

@@ -8,7 +8,10 @@
     tools:context="example.nightfall_of_the_final_conquer.app.home">
 
 
-    <include layout="@layout/toolbar_menu" />
+    <include
+        layout="@layout/toolbar_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:keepScreenOn="true"

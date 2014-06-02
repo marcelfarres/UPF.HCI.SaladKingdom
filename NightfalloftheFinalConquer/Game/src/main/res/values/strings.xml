@@ -15,5 +15,7 @@
     <string name="ATK"> ATK:</string>
     <string name="DEF"> DEF:</string>
     <string name="SP"> SP:</string>
+    <string name="discovered_monsters">10</string>
+    <string name="number_total_monsters">10</string>
 
 </resources>
