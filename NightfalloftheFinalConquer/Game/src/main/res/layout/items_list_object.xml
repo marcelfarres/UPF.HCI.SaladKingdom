@@ -148,5 +148,5 @@
         android:id="@+id/button_team"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="105dp"
-        android:background="#DC0"/>
+        android:background="#506"/>
 </FrameLayout>

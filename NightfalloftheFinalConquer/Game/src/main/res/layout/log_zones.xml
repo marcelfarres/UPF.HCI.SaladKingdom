@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="example.nightfall_of_the_final_conquer.app.home">
+
+    <include layout="@layout/toolbar_menu"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Zones"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:background="#506"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="173dp"
+        android:layout_gravity="center_horizontal|top"
+        android:id="@+id/list_zones"
+        android:fadeScrollbars="false"
+        android:clickable="true"
+        android:layout_marginTop="30dp">
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Recent Activities"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:background="#975"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="173dp"
+        android:layout_gravity="center_horizontal|top"
+        android:id="@+id/list_recentActivities"
+        android:fadeScrollbars="false"
+        android:clickable="false"
+        android:layout_marginTop="250dp">
+    </ListView>
+
+
+
+</FrameLayout>
