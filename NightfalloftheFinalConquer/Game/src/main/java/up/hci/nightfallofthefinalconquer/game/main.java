@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.File;
@@ -55,10 +56,14 @@ public class main extends Activity {
     /*NFC properties*/
     NFCSQLiteHelper nfchp;
 
+    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        addListenerOnButton();
 
         //set file manager
         FileManager.context = this;
@@ -135,6 +140,18 @@ public class main extends Activity {
         // while interacting with the UI.
 //        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
+
+    public void addListenerOnButton(){
+
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // ACTION !!!! (Implementar !)
+            }
+        });
+    }
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

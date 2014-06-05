@@ -25,6 +25,11 @@ public class user_detail extends Activity {
     private Button sp_minus;
     private Button sp_plus;
 
+    private Button button_item;
+    private Button button_log;
+    private Button button_maps;
+    private Button button_monsters;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +114,38 @@ public class user_detail extends Activity {
 
         sp_plus = (Button) findViewById(R.id.sp_plus);
         sp_plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // ACTION !!!! (Implementar !)
+            }
+        });
+
+        button_item = (Button) findViewById(R.id.button_item);
+        button_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // ACTION !!!! (Implementar !)
+            }
+        });
+
+        button_log = (Button) findViewById(R.id.button_log);
+        button_log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // ACTION !!!! (Implementar !)
+            }
+        });
+
+        button_maps = (Button) findViewById(R.id.button_map);
+        button_maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // ACTION !!!! (Implementar !)
+            }
+        });
+
+        button_monsters = (Button) findViewById(R.id.button_monsters);
+        button_monsters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // ACTION !!!! (Implementar !)
