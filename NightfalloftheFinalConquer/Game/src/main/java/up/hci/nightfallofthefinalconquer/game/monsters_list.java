@@ -1,6 +1,7 @@
 package up.hci.nightfallofthefinalconquer.game;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,40 @@ public class monsters_list extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monsters_list);
 
-        addListenerOnListView();
+        //addListenerOnListView();
+
+        //clicar al boto item del toolbar
+        View.OnClickListener listnr_items=new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent("ItemsActivity");
+                startActivity(i);
+            }
+        };
+        Button butt_items =(Button) findViewById(R.id.button_item);
+        butt_items.setOnClickListener(listnr_items);
+
+        //clicar al boto log del toolbar
+        View.OnClickListener listnr_log=new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent("LogActivity");
+                startActivity(i);
+            }
+        };
+        Button butt_log =(Button) findViewById(R.id.button_log);
+        butt_log.setOnClickListener(listnr_log);
+
+        //clicar al boto map del toolbar
+        View.OnClickListener listnr_map=new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent("MapActivity");
+                startActivity(i);
+            }
+        };
+        Button butt_map =(Button) findViewById(R.id.button_map);
+        butt_map.setOnClickListener(listnr_map);
     }
 
     public void addListenerOnListView() {

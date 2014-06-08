@@ -14,6 +14,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Intent;
+import android.view.Menu;
+import android.view.View.OnClickListener;
+import android.util.Log;
+
 
 import java.io.File;
 
@@ -56,15 +61,59 @@ public class main extends Activity {
     /*NFC properties*/
     NFCSQLiteHelper nfchp;
 
-    private Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addListenerOnButton();
+        //addListenerOnButton();
 
+        //--------
+        //clicar al boto item del toolbar
+        OnClickListener listnr_items=new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent("ItemsActivity");
+                startActivity(i);
+            }
+        };
+        Button butt_items =(Button) findViewById(R.id.button_item);
+        butt_items.setOnClickListener(listnr_items);
+
+        //clicar al boto log del toolbar
+        OnClickListener listnr_log=new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent("LogActivity");
+                startActivity(i);
+            }
+        };
+        Button butt_log =(Button) findViewById(R.id.button_log);
+        butt_log.setOnClickListener(listnr_log);
+
+        //clicar al boto map del toolbar
+        OnClickListener listnr_map=new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent("MapActivity");
+                startActivity(i);
+            }
+        };
+        Button butt_map =(Button) findViewById(R.id.button_map);
+        butt_map.setOnClickListener(listnr_map);
+
+        //clicar al boto monsters del toolbar
+        OnClickListener listnr_mons=new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent("MonstersActivity");
+                startActivity(i);
+            }
+        };
+        Button butt_monsters =(Button) findViewById(R.id.button_monsters);
+        butt_monsters.setOnClickListener(listnr_mons);
+
+        //-------
         //set file manager
         FileManager.context = this;
 
@@ -141,7 +190,8 @@ public class main extends Activity {
 //        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
-    public void addListenerOnButton(){
+    //boto + del pantalla main
+    /*public void addListenerOnButton(){
 
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +200,7 @@ public class main extends Activity {
                 // ACTION !!!! (Implementar !)
             }
         });
-    }
+    }*/
 
 
     @Override
