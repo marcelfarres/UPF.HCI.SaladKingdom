@@ -22,7 +22,9 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(FileManager.openSQLFile());
+        //db.execSQL(FileManager.openSQLFile());
+        createDatabase(db);
+
         Log.d("DBNFC", "Database created!");
 
         db.execSQL("INSERT INTO User (id, email, name) VALUES (1, 'naulacambra@gmail.com', 'Arnau')");
@@ -61,5 +63,13 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
             return c.getString(c.getColumnIndex("name"));
         }
         return "";
+    }
+
+    public void createDatabase(SQLiteDatabase db){
+        db.execSQL("CREATE TABLE UserUser (\n" +
+                "    id int NOT NULL PRIMARY KEY,\n" +
+                "    email varchar(100) NOT NULL,\n" +
+                "    name varchar(100) NOT NULL\n" +
+                ");");
     }
 }
