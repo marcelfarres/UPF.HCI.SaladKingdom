@@ -65,11 +65,92 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
         return "";
     }
 
-    public void createDatabase(SQLiteDatabase db){
+    public void createDatabase(SQLiteDatabase db) {
+        //User table
         db.execSQL("CREATE TABLE UserUser (\n" +
                 "    id int NOT NULL PRIMARY KEY,\n" +
                 "    email varchar(100) NOT NULL,\n" +
                 "    name varchar(100) NOT NULL\n" +
                 ");");
+        //Stats Table
+        db.execSQL("CREATE TABLE Stats (\n" +
+                "    id integer NOT NULL PRIMARY KEY,\n" +
+                "    hp integer NOT NULL,\n" +
+                "    mp integer NOT NULL,\n" +
+                "    strength integer NOT NULL,\n" +
+                "    defense integer NOT NULL,\n" +
+                "    magic_defense integer NOT NULL,\n" +
+                "    speed integer NOT NULL,\n" +
+                "    level integer NOT NULL\n" +
+                ");");
+        //Geolocations Table
+        db.execSQL("CREATE TABLE Geolocations (\n" +
+                "    id integer NOT NULL PRIMARY KEY,\n" +
+                "    latitude double NOT NULL,\n" +
+                "    longitude double NOT NULL,\n" +
+                "    Geolocations_id integer NOT NULL\n" +
+                ");");
+        //Entity Table
+        db.execSQL("CREATE TABLE Entity (\n" +
+                "    id integer NOT NULL PRIMARY KEY,\n" +
+                "    name varchar(100) NOT NULL,\n" +
+                "    id_stats integer NOT NULL,\n" +
+                "    id_geolocation integer NOT NULL,\n" +
+                "    avatar varchar(100),\n" +
+                "    FOREIGN KEY (id_geolocation) REFERENCES Geolocations (id),\n" +
+                "    FOREIGN KEY (id_stats) REFERENCES Stats (id)\n" +
+                ");");
+        //Status Monster Table
+        db.execSQL("CREATE TABLE MonsterStatus (\n" +
+                "    id integer NOT NULL PRIMARY KEY,\n" +
+                "    status integer NOT NULL\n" +
+                ");");
+        addMonsterStatus(db);
+        //Monsters Table
+        db.execSQL("CREATE TABLE Monsters (\n" +
+                "    id integer NOT NULL PRIMARY KEY,\n" +
+                "    id_status integer NOT NULL,\n" +
+                "    id_entity integer NOT NULL,\n" +
+                "    Monsters_id integer NOT NULL,\n" +
+                "    FOREIGN KEY (id_status) REFERENCES MonsterStatus (id),\n" +
+                "    FOREIGN KEY (id_entity) REFERENCES Entity (id)\n" +
+                ");");
+        addMonsters(db);
+    }
+    public void addMonsterStatus(SQLiteDatabase db) {
+        db.execSQL("INSERT INTO MonsterStatus " +
+                "VALUES (" +
+                "1," +
+                "'Visto'");
+    }
+    public void addMonsters(SQLiteDatabase db) {
+        //add stats monster
+        db.execSQL("INSERT INTO Stats " +
+                "VALUES (" +
+                "1," +
+                "500," +
+                "250," +
+                "50," +
+                "50," +
+                "25," +
+                "15," +
+                "99" +
+                ");");
+        //add entity Monster
+        db.execSQL("INSERT INTO Entity " +
+                "VALUES (" +
+                "1," +
+                "'Molbol'," +
+                "1," +
+                "1," +
+                "null," +
+                ");");
+        //add monster
+        db.execSQL("INSERT INTO Monsters " +
+                "VALUES (" +
+                "1," +
+                "1," +
+                "1," +
+                "1");
     }
 }

@@ -87,7 +87,7 @@ CREATE TABLE MonsterEvents (
 
 CREATE TABLE MonsterStatus (
     id integer NOT NULL PRIMARY KEY,
-    status integer NOT NULL
+    status varchar(100) NOT NULL
 );
 
 CREATE TABLE Monsters (

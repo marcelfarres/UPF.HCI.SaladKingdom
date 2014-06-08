@@ -14,21 +14,22 @@
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name="up.hci.nightfallofthefinalconquer.game.items_list"
-            android:label="Nightfall-of-the-Final-Conquer">
-            <intent-filter >
-                <action  android:name="android.intent.action.ITEMS" />
-
-                <category  android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:name=".ItemsActivity"
+            android:label="@string/app_name">
         </activity>
-
+        <activity
+            android:name=".LogActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".MonstersListActivity"
+            android:label="@string/app_name">
+        </activity>
     </application>
 
 </manifest>

@@ -9,7 +9,7 @@ import android.widget.Button;
 /**
  * Created by desire on 05/06/2014.
  */
-public class log_zones extends Activity {
+public class LogActivity extends Activity {
 
     private Button button_item;
     private Button button_log;
@@ -23,40 +23,40 @@ public class log_zones extends Activity {
         //addListenerOnButton();
 
         //clicar al boto item del toolbar
-        View.OnClickListener listnr_items=new View.OnClickListener() {
+        View.OnClickListener listnr_items = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent("ItemsActivity");
+                Intent i = new Intent("ItemsActivity");
                 startActivity(i);
             }
         };
-        Button butt_items =(Button) findViewById(R.id.button_item);
+        Button butt_items = (Button) findViewById(R.id.button_item);
         butt_items.setOnClickListener(listnr_items);
 
         //clicar al boto map del toolbar
-        View.OnClickListener listnr_map=new View.OnClickListener() {
+        View.OnClickListener listnr_map = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent("MapActivity");
+                Intent i = new Intent("MapActivity");
                 startActivity(i);
             }
         };
-        Button butt_map =(Button) findViewById(R.id.button_map);
+        Button butt_map = (Button) findViewById(R.id.button_map);
         butt_map.setOnClickListener(listnr_map);
 
         //clicar al boto monsters del toolbar
-        View.OnClickListener listnr_mons=new View.OnClickListener() {
+        View.OnClickListener listnr_mons = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent("MonstersActivity");
+                Intent i = new Intent("MonstersActivity");
                 startActivity(i);
             }
         };
-        Button butt_monsters =(Button) findViewById(R.id.button_monsters);
+        Button butt_monsters = (Button) findViewById(R.id.button_monsters);
         butt_monsters.setOnClickListener(listnr_mons);
     }
 
-    public void addListenerOnButton(){
+    public void addListenerOnButton() {
 
         button_item = (Button) findViewById(R.id.button_item);
         button_item.setOnClickListener(new View.OnClickListener() {
@@ -90,5 +90,44 @@ public class log_zones extends Activity {
             }
         });
 
+    }
+
+    /*NEW FUNCTIONS*/
+    public void setToolbarButtons() {
+        //clicar al boto item del toolbar
+        (findViewById(R.id.button_item)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(ItemsActivity.class);
+            }
+        });
+
+        //clicar al boto log del toolbar
+        (findViewById(R.id.button_log)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(main.class);
+            }
+        });
+        //clicar al boto map del toolbar
+        /*(findViewById(R.id.button_item)).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(LogActivity.class);
+            }
+        });*/
+
+        //clicar al boto monsters del toolbar
+        (findViewById(R.id.button_monsters)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(MonstersListActivity.class);
+            }
+        });
+    }
+
+    public void startToolbarActivity(java.lang.Class<?> cls) {
+        Intent i = new Intent(this, cls);
+        startActivity(i);
     }
 }

@@ -4,23 +4,13 @@ import up.hci.nightfallofthefinalconquer.game.util.FileManager;
 import up.hci.nightfallofthefinalconquer.game.util.NFCSQLiteHelper;
 import up.hci.nightfallofthefinalconquer.game.util.SystemUiHider;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.View.OnClickListener;
-import android.util.Log;
-
-
-import java.io.File;
 
 
 /**
@@ -66,52 +56,9 @@ public class main extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //addListenerOnButton();
-
+        setToolbarButtons();
         //--------
-        //clicar al boto item del toolbar
-        OnClickListener listnr_items=new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent("ItemsActivity");
-                startActivity(i);
-            }
-        };
-        Button butt_items =(Button) findViewById(R.id.button_item);
-        butt_items.setOnClickListener(listnr_items);
 
-        //clicar al boto log del toolbar
-        OnClickListener listnr_log=new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent("LogActivity");
-                startActivity(i);
-            }
-        };
-        Button butt_log =(Button) findViewById(R.id.button_log);
-        butt_log.setOnClickListener(listnr_log);
-
-        //clicar al boto map del toolbar
-        OnClickListener listnr_map=new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent("MapActivity");
-                startActivity(i);
-            }
-        };
-        Button butt_map =(Button) findViewById(R.id.button_map);
-        butt_map.setOnClickListener(listnr_map);
-
-        //clicar al boto monsters del toolbar
-        OnClickListener listnr_mons=new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent("MonstersActivity");
-                startActivity(i);
-            }
-        };
-        Button butt_monsters =(Button) findViewById(R.id.button_monsters);
-        butt_monsters.setOnClickListener(listnr_mons);
 
         //-------
         //set file manager
@@ -120,11 +67,10 @@ public class main extends Activity {
         FileManager.openSQLFile();
 
         //set database
-       nfchp = new NFCSQLiteHelper(this, "db_nfc", null, 1);
+        nfchp = new NFCSQLiteHelper(this, "db_nfc", null, 1);
 //
 //        //get player name
-        ((TextView)findViewById(R.id.name_player)).setText(nfchp.getPlayerName());
-
+        ((TextView) findViewById(R.id.name_player)).setText(nfchp.getPlayerName());
 
 
 //        final View controlsView = findViewById(R.id.fullscreen_content_controls);
@@ -190,6 +136,7 @@ public class main extends Activity {
 //        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
+
     //boto + del pantalla main
     /*public void addListenerOnButton(){
 
@@ -247,6 +194,44 @@ public class main extends Activity {
 //    }
 
     /*NEW FUNCTIONS*/
+    public void setToolbarButtons() {
+        //clicar al boto item del toolbar
+        (findViewById(R.id.button_item)).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(ItemsActivity.class);
+            }
+        });
+
+        //clicar al boto log del toolbar
+        (findViewById(R.id.button_log)).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(LogActivity.class);
+            }
+        });
+
+        //clicar al boto map del toolbar
+        /*(findViewById(R.id.button_item)).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(LogActivity.class);
+            }
+        });*/
+
+        //clicar al boto monsters del toolbar
+        (findViewById(R.id.button_monsters)).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(MonstersListActivity.class);
+            }
+        });
+    }
+
+    public void startToolbarActivity(java.lang.Class<?> cls) {
+        Intent i = new Intent(this, cls);
+        startActivity(i);
+    }
 
 
 }

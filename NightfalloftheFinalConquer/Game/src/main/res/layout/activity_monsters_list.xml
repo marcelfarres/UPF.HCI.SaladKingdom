@@ -7,7 +7,9 @@
     android:background="#0099cc"
     tools:context="example.nightfall_of_the_final_conquer.app.home">
 
-
+    <include layout="@layout/toolbar_menu"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -105,7 +107,7 @@
 
         <ListView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="310dp"
             android:layout_gravity="center"
             android:id="@+id/list_monsters"
             android:fadeScrollbars="false"
@@ -116,10 +118,7 @@
             android:layout_alignStart="@+id/total_monsters_row">
         </ListView>
 
-        <include layout="@layout/toolbar_menu"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_alignBottom="@id/list_monsters"/>
+
 
     </RelativeLayout>
 

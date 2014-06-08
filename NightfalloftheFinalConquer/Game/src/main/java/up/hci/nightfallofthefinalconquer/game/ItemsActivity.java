@@ -12,7 +12,7 @@ import android.widget.Button;
 /**
  * Created by desire on 05/06/2014.
  */
-public class items_list extends Activity {
+public class ItemsActivity extends Activity {
 
     private ListView list_items;
     private Button button_item;
