@@ -44,6 +44,10 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
         this.db = this.getWritableDatabase();
     }
 
+    public Cursor query(String query){
+        return db.rawQuery(query, null);
+    }
+
     public String getPlayerName() {
         //Log.d("DBNFC", "Setting database readable");
         //setDBReadable();
@@ -84,7 +88,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 "    level integer NOT NULL\n" +
                 ");");
         //Geolocations Table
-        db.execSQL("CREATE TABLE Geolocations (\n" +
+        db.execSQL("CREATE TABLE Geolocation (\n" +
                 "    id integer NOT NULL PRIMARY KEY,\n" +
                 "    latitude double NOT NULL,\n" +
                 "    longitude double NOT NULL,\n" +
@@ -107,7 +111,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 ");");
         addMonsterStatus(db);
         //Monsters Table
-        db.execSQL("CREATE TABLE Monsters (\n" +
+        db.execSQL("CREATE TABLE Monster (\n" +
                 "    id integer NOT NULL PRIMARY KEY,\n" +
                 "    id_status integer NOT NULL,\n" +
                 "    id_entity integer NOT NULL,\n" +
@@ -117,12 +121,14 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 ");");
         addMonsters(db);
     }
+
     public void addMonsterStatus(SQLiteDatabase db) {
         db.execSQL("INSERT INTO MonsterStatus " +
                 "VALUES (" +
                 "1," +
                 "'Visto');");
     }
+
     public void addMonsters(SQLiteDatabase db) {
         //add stats monster
         db.execSQL("INSERT INTO Stats " +
@@ -146,7 +152,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 "null" +
                 ");");
         //add monster
-        db.execSQL("INSERT INTO Monsters " +
+        db.execSQL("INSERT INTO Monster " +
                 "VALUES (" +
                 "1," +
                 "1," +

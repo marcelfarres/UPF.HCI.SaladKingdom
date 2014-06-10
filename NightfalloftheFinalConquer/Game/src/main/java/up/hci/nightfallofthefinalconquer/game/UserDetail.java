@@ -8,7 +8,7 @@ import android.widget.Button;
 /**
  * Created by desire on 05/06/2014.
  */
-public class user_detail extends Activity {
+public class UserDetail extends Activity {
 
     private Button hp_minus;
     private Button hp_plus;

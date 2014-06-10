@@ -1,5 +1,6 @@
 package up.hci.nightfallofthefinalconquer.game;
 
+import up.hci.nightfallofthefinalconquer.game.managers.MonsterManager;
 import up.hci.nightfallofthefinalconquer.game.util.FileManager;
 import up.hci.nightfallofthefinalconquer.game.util.NFCSQLiteHelper;
 import up.hci.nightfallofthefinalconquer.game.util.SystemUiHider;
@@ -7,7 +8,6 @@ import up.hci.nightfallofthefinalconquer.game.util.SystemUiHider;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
 import android.view.View.OnClickListener;
@@ -54,7 +54,7 @@ public class main extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
 
         setToolbarButtons();
         //--------
@@ -68,6 +68,9 @@ public class main extends Activity {
 
         //set database
         nfchp = new NFCSQLiteHelper(this, "db_nfc", null, 1);
+
+        //set managers
+        MonsterManager.getInstance().nfchp = nfchp;
 //
 //        //get player name
         ((TextView) findViewById(R.id.name_player)).setText(nfchp.getPlayerName());
@@ -224,6 +227,13 @@ public class main extends Activity {
             @Override
             public void onClick(View v) {
                 startToolbarActivity(MonstersListActivity.class);
+            }
+        });
+
+        (findViewById(R.id.button_plus)).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(UserDetail.class);
             }
         });
     }

@@ -18,7 +18,9 @@ public class LogActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.log_zones);
+        setContentView(R.layout.log_list);
+
+        setToolbarButtons();
 
         //addListenerOnButton();
 
@@ -103,12 +105,12 @@ public class LogActivity extends Activity {
         });
 
         //clicar al boto log del toolbar
-        (findViewById(R.id.button_log)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startToolbarActivity(main.class);
-            }
-        });
+//        (findViewById(R.id.button_log)).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startToolbarActivity(main.class);
+//            }
+//        });
         //clicar al boto map del toolbar
         /*(findViewById(R.id.button_item)).setOnClickListener(new OnClickListener() {
             @Override
