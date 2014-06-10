@@ -23,6 +23,7 @@ public class MonstersListActivity extends Activity {
         setContentView(R.layout.activity_monsters_list);
 
         listview = (ListView) findViewById(R.id.list_monsters);
+
         listview.setAdapter(new MonsterItemAdapter(this, new String[] { "data1",
                 "data2" }));
     }

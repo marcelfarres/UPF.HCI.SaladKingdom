@@ -67,7 +67,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
 
     public void createDatabase(SQLiteDatabase db) {
         //User table
-        db.execSQL("CREATE TABLE UserUser (\n" +
+        db.execSQL("CREATE TABLE User (\n" +
                 "    id int NOT NULL PRIMARY KEY,\n" +
                 "    email varchar(100) NOT NULL,\n" +
                 "    name varchar(100) NOT NULL\n" +
@@ -121,7 +121,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO MonsterStatus " +
                 "VALUES (" +
                 "1," +
-                "'Visto'");
+                "'Visto');");
     }
     public void addMonsters(SQLiteDatabase db) {
         //add stats monster
@@ -143,7 +143,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 "'Molbol'," +
                 "1," +
                 "1," +
-                "null," +
+                "null" +
                 ");");
         //add monster
         db.execSQL("INSERT INTO Monsters " +
@@ -151,6 +151,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 "1," +
                 "1," +
                 "1," +
-                "1");
+                "1" +
+                ");");
     }
 }
