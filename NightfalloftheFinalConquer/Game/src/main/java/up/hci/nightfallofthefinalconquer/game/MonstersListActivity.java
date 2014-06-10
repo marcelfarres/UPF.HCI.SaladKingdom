@@ -24,8 +24,10 @@ public class MonstersListActivity extends Activity {
 
         listview = (ListView) findViewById(R.id.list_monsters);
 
-        listview.setAdapter(new MonsterItemAdapter(this, new String[] { "data1",
-                "data2" }));
+        Monster[] monsterList = getMonsterList();
+
+        listview.setAdapter(new MonsterItemAdapter(this, new String[]{"data1",
+                "data2"}));
     }
 
 //    public void addListenerOnListView() {
@@ -104,4 +106,12 @@ public class MonstersListActivity extends Activity {
         Intent i = new Intent(this, cls);
         startActivity(i);
     }
+
+    public Monster[] getMonsterList() {
+        return null;
+    }
+}
+
+class Monster{
+
 }
