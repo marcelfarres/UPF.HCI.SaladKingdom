@@ -23,6 +23,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //db.execSQL(FileManager.openSQLFile());
+        dropDatabase(db);
         createDatabase(db);
 
         Log.d("DBNFC", "Database created!");
@@ -33,6 +34,8 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int previousVersion, int newVersion) {
+        dropDatabase(db);
+        createDatabase(db);
     }
 
     //new functions
@@ -44,7 +47,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
         this.db = this.getWritableDatabase();
     }
 
-    public Cursor query(String query){
+    public Cursor query(String query) {
         return db.rawQuery(query, null);
     }
 
@@ -67,6 +70,15 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
             return c.getString(c.getColumnIndex("name"));
         }
         return "";
+    }
+
+    public void dropDatabase(SQLiteDatabase db) {
+        db.execSQL("DROP TABLE IF EXISTS User;");
+        db.execSQL("DROP TABLE IF EXISTS Stats;");
+        db.execSQL("DROP TABLE IF EXISTS Geolocation;");
+        db.execSQL("DROP TABLE IF EXISTS Entity;");
+        db.execSQL("DROP TABLE IF EXISTS MonsterStatus;");
+        db.execSQL("DROP TABLE IF EXISTS Monster;");
     }
 
     public void createDatabase(SQLiteDatabase db) {
@@ -107,7 +119,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
         //Status Monster Table
         db.execSQL("CREATE TABLE MonsterStatus (\n" +
                 "    id integer NOT NULL PRIMARY KEY,\n" +
-                "    status integer NOT NULL\n" +
+                "    status varchar(100) NOT NULL\n" +
                 ");");
         addMonsterStatus(db);
         //Monsters Table
@@ -115,49 +127,58 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 "    id integer NOT NULL PRIMARY KEY,\n" +
                 "    id_status integer NOT NULL,\n" +
                 "    id_entity integer NOT NULL,\n" +
-                "    Monsters_id integer NOT NULL,\n" +
                 "    FOREIGN KEY (id_status) REFERENCES MonsterStatus (id),\n" +
                 "    FOREIGN KEY (id_entity) REFERENCES Entity (id)\n" +
                 ");");
-        addMonsters(db);
+        addMonsters(db, 10);
     }
 
     public void addMonsterStatus(SQLiteDatabase db) {
         db.execSQL("INSERT INTO MonsterStatus " +
                 "VALUES (" +
                 "1," +
-                "'Visto');");
+                "'Non seen');");
+        db.execSQL("INSERT INTO MonsterStatus " +
+                "VALUES (" +
+                "2," +
+                "'Seen and non defeated');");
+        db.execSQL("INSERT INTO MonsterStatus " +
+                "VALUES (" +
+                "3," +
+                "'Seen and defeated');");
     }
 
-    public void addMonsters(SQLiteDatabase db) {
-        //add stats monster
-        db.execSQL("INSERT INTO Stats " +
-                "VALUES (" +
-                "1," +
-                "500," +
-                "250," +
-                "50," +
-                "50," +
-                "25," +
-                "15," +
-                "99" +
-                ");");
-        //add entity Monster
-        db.execSQL("INSERT INTO Entity " +
-                "VALUES (" +
-                "1," +
-                "'Molbol'," +
-                "1," +
-                "1," +
-                "null" +
-                ");");
-        //add monster
-        db.execSQL("INSERT INTO Monster " +
-                "VALUES (" +
-                "1," +
-                "1," +
-                "1," +
-                "1" +
-                ");");
+    public void addMonsters(SQLiteDatabase db, int quantity) {
+        String[] names = {"Molbol", "Behemot", "Ahriman", "Jahi", "Ente Rojo", "Agamido", "Halcon", "Nitro", "Lupus", "Ochu", "Sahuagin", "Rocomaimai", "Yaibal"};
+        for(int i=1; i <= quantity; i++){
+            //add stats monster
+            db.execSQL("INSERT INTO Stats " +
+                    "VALUES (" +
+                    i + "," +
+                    (Math.random()*200 + 300) + "," +
+                    (Math.random()*200 + 50) + "," +
+                    (Math.random()*25 + 25) + "," +
+                    (Math.random()*25 + 25) + "," +
+                    (Math.random()*15 + 10) + "," +
+                    (Math.random()*5 + 5) + "," +
+                    (Math.random()*50 + 50) + "" +
+                    ");");
+            //add entity Monster
+            db.execSQL("INSERT INTO Entity " +
+                    "VALUES (" +
+                    i + "," +
+                    "'" + names[i%names.length] + "'," +
+                    i +"," +
+                    "1," +
+                    "null" +
+                    ");");
+            //add monster
+            db.execSQL("INSERT INTO Monster " +
+                    "VALUES (" +
+                    i + "," +
+                    (int)(Math.random()*3) + "," +
+                    i +
+                    ");");
+        }
     }
 }

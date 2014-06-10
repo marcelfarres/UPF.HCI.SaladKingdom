@@ -1,16 +1,11 @@
 package up.hci.nightfallofthefinalconquer.game;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -19,31 +14,45 @@ import up.hci.nightfallofthefinalconquer.game.classes.Monster;
 import up.hci.nightfallofthefinalconquer.game.managers.MonsterManager;
 
 /**
- * Created by desire on 05/06/2014.
+ * Created by pacific on 11/06/2014.
  */
-public class MonstersListActivity extends Activity {
+public class MonsterDetailActivity extends Activity {
     ListView listview;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.monster_list);
+        setContentView(R.layout.monster_detail);
 
         setToolbarButtons();
 
-        listview = (ListView) findViewById(R.id.list_monsters);
+        Bundle bundle = this.getIntent().getExtras();
+        int monsterId = bundle.getInt("MonsterId");
 
-        ArrayList<Monster> monsterList = MonsterManager.getInstance().getMonsters();
-        listview.setAdapter(new MonsterItemAdapter(this, monsterList));
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                TextView id = (TextView) view.findViewById(R.id.monsterItemId);
+        Monster monster = MonsterManager.getInstance().getMonster( monsterId );
 
-                Bundle b = new Bundle();
-                b.putInt("MonsterId", Integer.valueOf(id.getText().toString()) );
-                startToolbarActivity(MonsterDetailActivity.class, b);
-            }
-        });
+        TextView monster_name = (TextView) findViewById(R.id.name_monster);
+        monster_name.setText( monster.getName() );
+
+        TextView monster_status = (TextView) findViewById(R.id.defeated_or_not);
+        monster_status.setText( monster.getStatus() );
+
+        TextView monster_hp = (TextView) findViewById(R.id.HP_value_monster);
+        monster_hp.setText( String.valueOf(monster.getStats().getHp()) );
+
+        TextView monster_mp = (TextView) findViewById(R.id.MP_value_monster);
+        monster_mp.setText( String.valueOf(monster.getStats().getMp()) );
+
+        TextView monster_stg = (TextView) findViewById(R.id.ATK_value_monster);
+        monster_stg.setText( String.valueOf(monster.getStats().getStg()) );
+
+        TextView monster_spd = (TextView) findViewById(R.id.SP_value_monster);
+        monster_spd.setText( String.valueOf(monster.getStats().getSpd()) );
+
+        TextView monster_def = (TextView) findViewById(R.id.DEF_value_monster);
+        monster_def.setText( String.valueOf(monster.getStats().getDef()) );
+
+//        TextView monster_hp = (TextView) findViewById(R.id.HP_value_monster);
+//        monster_hp.setText( monster.getStats().getHp() );
 
         /*TextView total_monsters = (TextView) findViewById(R.id.number_total_monsters);
         total_monsters.setText(monsterList.size());*/
@@ -88,15 +97,5 @@ public class MonstersListActivity extends Activity {
     public void startToolbarActivity(java.lang.Class<?> cls) {
         Intent i = new Intent(this, cls);
         startActivity(i);
-    }
-
-    public void startToolbarActivity(java.lang.Class<?> cls, Bundle bundle) {
-        Intent i = new Intent(this, cls);
-        i.putExtras(bundle);
-        startActivity(i);
-    }
-
-    public void alert(String title, String message, String button){
-        new AlertDialog.Builder(this).setTitle(title).setMessage(message).setNeutralButton(button, null).show();
     }
 }

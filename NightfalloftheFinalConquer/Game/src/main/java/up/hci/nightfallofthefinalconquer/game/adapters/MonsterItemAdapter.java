@@ -54,8 +54,10 @@ public class MonsterItemAdapter extends BaseAdapter {
             vi = inflater.inflate(R.layout.monster_list_item, null);
         TextView name = (TextView) vi.findViewById(R.id.monsterItemName);
         TextView lvl = (TextView) vi.findViewById(R.id.monsterItemLevel);
+        TextView id = (TextView) vi.findViewById(R.id.monsterItemId);
         name.setText(data.get(position).getName());
         lvl.setText(String.valueOf(data.get(position).getStats().getLvl()));
+        id.setText(String.valueOf(data.get(position).getId()));
         return vi;
     }
 }

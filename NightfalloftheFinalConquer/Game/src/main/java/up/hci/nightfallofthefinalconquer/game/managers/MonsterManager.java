@@ -32,19 +32,20 @@ public class MonsterManager {
     }
 
     public void updateMonsterList() {
-        Cursor c = nfchp.query("SELECT name, hp, mp, strength, defense, magic_defense, speed, level FROM Monster m, Entity e, Stats s WHERE m.id_status = s.id AND m.id_entity = e.id");
+        Cursor c = nfchp.query("SELECT m.id, name, hp, mp, strength, defense, magic_defense, speed, level FROM Monster m, Entity e, Stats s WHERE m.id_entity = e.id AND e.id_stats = s.id");
         if (c.moveToFirst()) {
             do {
-                String name = c.getString(0);
-                int hp = c.getInt(1);
-                int mp = c.getInt(2);
-                int stg = c.getInt(3);
-                int def = c.getInt(4);
-                int mdef = c.getInt(4);
-                int spd = c.getInt(5);
-                int lvl = c.getInt(6);
+                int id = c.getInt(0);
+                String name = c.getString(1);
+                int hp = c.getInt(2);
+                int mp = c.getInt(3);
+                int stg = c.getInt(4);
+                int def = c.getInt(5);
+                int mdef = c.getInt(6);
+                int spd = c.getInt(7);
+                int lvl = c.getInt(8);
 
-                monsters.add(new Monster(name, hp, mp, stg, def, mdef, spd, lvl));
+                monsters.add(new Monster(id, name, hp, mp, stg, def, mdef, spd, lvl));
             } while (c.moveToNext());
         }
     }
@@ -55,4 +56,35 @@ public class MonsterManager {
         return monsters;
     }
 
+    public Monster getMonster( int idMonster ){
+        if (monsters.size() == 0)
+            updateMonsterList();
+        for(Monster monster : monsters){
+            if(monster.getId() == idMonster)
+                return monster;
+        }
+        return null;
+    }
+
+    public ArrayList<Monster> getMonsters(boolean seen, boolean defeated) {
+        ArrayList<Monster> nMonsters = new ArrayList<Monster>();
+
+        if (monsters.size() == 0)
+            updateMonsterList();
+
+        for(Monster monster : monsters){
+            if(seen && defeated){
+                if(monster.isSeen() && monster.isDefeated()){
+                    nMonsters.add(monster);
+                }
+            }else if(seen && !defeated){
+                if(monster.isSeen()){
+                    nMonsters.add(monster);
+                }
+            }else{
+                nMonsters.add(monster);
+            }
+        }
+        return nMonsters;
+    }
 }

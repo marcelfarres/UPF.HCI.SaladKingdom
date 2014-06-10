@@ -67,7 +67,7 @@ public class main extends Activity {
         FileManager.openSQLFile();
 
         //set database
-        nfchp = new NFCSQLiteHelper(this, "db_nfc", null, 1);
+        nfchp = new NFCSQLiteHelper(this, "db_nfc", null, 4);
 
         //set managers
         MonsterManager.getInstance().nfchp = nfchp;
