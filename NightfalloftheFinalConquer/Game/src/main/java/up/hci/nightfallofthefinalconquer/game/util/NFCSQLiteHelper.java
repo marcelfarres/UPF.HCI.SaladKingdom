@@ -1,11 +1,16 @@
 package up.hci.nightfallofthefinalconquer.game.util;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.util.LinkedList;
+import java.util.List;
 
 
 /**
@@ -28,7 +33,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
 
         Log.d("DBNFC", "Database created!");
 
-        db.execSQL("INSERT INTO User (id, email, name) VALUES (1, 'naulacambra@gmail.com', 'Arnau')");
+        db.execSQL("INSERT INTO User (id, email, name) VALUES (1, 'naulacambra@gmail.com', 'Arnau');");
         Log.d("DBNFC", "Player inserted!");
     }
 
@@ -52,22 +57,12 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
     }
 
     public String getPlayerName() {
-        //Log.d("DBNFC", "Setting database readable");
-        //setDBReadable();
-        Log.d("DBNFC", "Trying to get player name");
         if (db == null) {
-            Log.d("DBNFC", "Database is null");
             setDBReadable();
-            Log.d("DBNFC", "Setting database readable");
         }
-        if (db.isReadOnly()) {
-            Log.d("DBNFC", "Is Readable: true");
-        } else {
-            Log.d("DBNFC", "Is Readable: false");
-        }
-        Cursor c = db.rawQuery("SELECT name FROM User", new String[]{});
+        Cursor c = db.rawQuery("SELECT name FROM User", null);
         if (c.moveToFirst()) {
-            return c.getString(c.getColumnIndex("name"));
+            return c.getString(0);
         }
         return "";
     }
@@ -181,4 +176,6 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                     ");");
         }
     }
+
+
 }

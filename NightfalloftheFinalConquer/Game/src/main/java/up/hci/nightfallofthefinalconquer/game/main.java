@@ -5,12 +5,17 @@ import up.hci.nightfallofthefinalconquer.game.util.FileManager;
 import up.hci.nightfallofthefinalconquer.game.util.NFCSQLiteHelper;
 import up.hci.nightfallofthefinalconquer.game.util.SystemUiHider;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
 import android.view.View.OnClickListener;
+
+import java.util.LinkedList;
+import java.util.List;
 
 
 /**
@@ -73,7 +78,7 @@ public class main extends Activity {
         MonsterManager.getInstance().nfchp = nfchp;
 //
 //        //get player name
-        ((TextView) findViewById(R.id.name_player)).setText(nfchp.getPlayerName());
+        ((TextView) findViewById(R.id.name_player)).setText(getUsername());
 
 
 //        final View controlsView = findViewById(R.id.fullscreen_content_controls);
@@ -243,6 +248,28 @@ public class main extends Activity {
         startActivity(i);
     }
 
+
+    public String getUsername() {
+        AccountManager manager = AccountManager.get(this);
+        Account[] accounts = manager.getAccountsByType("com.google");
+        List<String> possibleEmails = new LinkedList<String>();
+
+        for (Account account : accounts) {
+            // TODO: Check possibleEmail against an email regex or treat
+            // account.name as an email address only for certain account.type values.
+            possibleEmails.add(account.name);
+        }
+
+        if (!possibleEmails.isEmpty() && possibleEmails.get(0) != null) {
+            String email = possibleEmails.get(0);
+            String[] parts = email.split("@");
+            if (parts.length > 0 && parts[0] != null)
+                return parts[0];
+            else
+                return null;
+        } else
+            return null;
+    }
 
 }
 
