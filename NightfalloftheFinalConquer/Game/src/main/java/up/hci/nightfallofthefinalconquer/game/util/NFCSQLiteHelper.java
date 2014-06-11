@@ -126,6 +126,14 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 "    FOREIGN KEY (id_entity) REFERENCES Entity (id)\n" +
                 ");");
         addMonsters(db, 10);
+
+        db.execSQL("CREATE TABLE Equipment (\n" +
+                "    id integer NOT NULL PRIMARY KEY,\n" +
+                "    id_entity integer NOT NULL,\n" +
+                "    own boolean NOT NULL,\n" +
+                "    equipped boolean NOT NULL,\n" +
+                "    FOREIGN KEY (id_entity) REFERENCES Entity (id)\n" +
+                ");");
     }
 
     public void addMonsterStatus(SQLiteDatabase db) {
@@ -145,25 +153,25 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
 
     public void addMonsters(SQLiteDatabase db, int quantity) {
         String[] names = {"Molbol", "Behemot", "Ahriman", "Jahi", "Ente Rojo", "Agamido", "Halcon", "Nitro", "Lupus", "Ochu", "Sahuagin", "Rocomaimai", "Yaibal"};
-        for(int i=1; i <= quantity; i++){
+        for (int i = 1; i <= quantity; i++) {
             //add stats monster
             db.execSQL("INSERT INTO Stats " +
                     "VALUES (" +
                     i + "," +
-                    (Math.random()*200 + 300) + "," +
-                    (Math.random()*200 + 50) + "," +
-                    (Math.random()*25 + 25) + "," +
-                    (Math.random()*25 + 25) + "," +
-                    (Math.random()*15 + 10) + "," +
-                    (Math.random()*5 + 5) + "," +
-                    (Math.random()*50 + 50) + "" +
+                    (Math.random() * 200 + 300) + "," +
+                    (Math.random() * 200 + 50) + "," +
+                    (Math.random() * 25 + 25) + "," +
+                    (Math.random() * 25 + 25) + "," +
+                    (Math.random() * 15 + 10) + "," +
+                    (Math.random() * 5 + 5) + "," +
+                    (Math.random() * 50 + 50) + "" +
                     ");");
             //add entity Monster
             db.execSQL("INSERT INTO Entity " +
                     "VALUES (" +
                     i + "," +
-                    "'" + names[i%names.length] + "'," +
-                    i +"," +
+                    "'" + names[i % names.length] + "'," +
+                    i + "," +
                     "1," +
                     "null" +
                     ");");
@@ -171,11 +179,33 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
             db.execSQL("INSERT INTO Monster " +
                     "VALUES (" +
                     i + "," +
-                    (int)(Math.random()*3) + "," +
+                    (int) (Math.random() * 3) + "," +
                     i +
                     ");");
         }
     }
 
-
+    public void addEquipments(SQLiteDatabase db, int quantity) {
+        String[] names = {"Escudo de la luna", "Espada flamigera", "Anillo de Coral", "Daga de hueso de dragon", "Peluca de Samurai", "Yelmo de Adamantio", "Escalibur", "Manamune", "Casco Mark IV", "Genkidama", "Espada Maestra", "Anillo Verde", "Dardo"};
+        for (int i = 1; i <= quantity; i++) {
+            //add entity Monster
+            db.execSQL("INSERT INTO Entity " +
+                    "VALUES (" +
+                    (10 + i) + "," +
+                    "'" + names[i % names.length] + "'," +
+                    i + "," +
+                    "1," +
+                    "null" +
+                    ");");
+            //add monster
+            db.execSQL("INSERT INTO Equipment " +
+                            "VALUES (" +
+                            i + "," +
+                            (10 + i) + "," +
+                            "true," +
+                            "true" +
+                            ");"
+            );
+        }
+    }
 }

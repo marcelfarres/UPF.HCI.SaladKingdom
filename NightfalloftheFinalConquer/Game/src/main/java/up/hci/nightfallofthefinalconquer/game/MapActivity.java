@@ -4,12 +4,10 @@ package up.hci.nightfallofthefinalconquer.game;
  * Created by Roser on 11/06/2014.
  */
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
-import up.hci.nightfallofthefinalconquer.game.R;
-
-public class MapActivity extends Activity {
+public class MapActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
