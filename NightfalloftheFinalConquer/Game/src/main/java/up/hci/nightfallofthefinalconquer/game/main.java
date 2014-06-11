@@ -1,5 +1,6 @@
 package up.hci.nightfallofthefinalconquer.game;
 
+import up.hci.nightfallofthefinalconquer.game.managers.ItemManager;
 import up.hci.nightfallofthefinalconquer.game.managers.MonsterManager;
 import up.hci.nightfallofthefinalconquer.game.util.FileManager;
 import up.hci.nightfallofthefinalconquer.game.util.NFCSQLiteHelper;
@@ -72,10 +73,11 @@ public class main extends Activity {
         FileManager.openSQLFile();
 
         //set database
-        nfchp = new NFCSQLiteHelper(this, "db_nfc", null, 4);
+        nfchp = new NFCSQLiteHelper(this, "db_nfc", null, 7);
 
         //set managers
         MonsterManager.getInstance().nfchp = nfchp;
+        ItemManager.getInstance().nfchp = nfchp;
 //
 //        //get player name
         ((TextView) findViewById(R.id.name_player)).setText(getUsername());
@@ -207,7 +209,7 @@ public class main extends Activity {
         (findViewById(R.id.button_item)).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToolbarActivity(ItemsActivity.class);
+                startToolbarActivity(ItemListActivity.class);
             }
         });
 

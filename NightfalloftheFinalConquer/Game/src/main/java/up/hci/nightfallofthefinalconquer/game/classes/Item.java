@@ -8,23 +8,41 @@ public class Item {
     String name;
     Stats stats;
 
-    Item(int id){
+    public Item(int id) {
         this.id = id;
         name = "";
         stats = null;
     }
 
-    Item(int id, String name){
+    public Item(int id, String name) {
         this.id = id;
         this.name = name;
         stats = null;
     }
 
-    Item(int id, String name, int hp, int mp, int stg, int def, int mdef, int spd, int lvl){
+    public Item(int id, String name, int hp, int mp, int stg, int def, int mdef, int spd, int lvl) {
         this.id = id;
         this.name = name;
         stats = new Stats(hp, mp, stg, def, mdef, spd, lvl);
     }
 
-    
+    public String getName() {
+        return this.name;
+    }
+
+    public Stats getStats() {
+        return this.stats;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public boolean isOwned(){
+        return true;
+    }
+
+    public boolean isEquipped(){
+        return true;
+    }
 }

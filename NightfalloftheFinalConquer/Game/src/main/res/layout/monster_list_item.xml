@@ -8,12 +8,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/monsterItemName" />
+        android:id="@+id/monsterItemName"
+        android:textSize="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/monsterItemLevel" />
+        android:id="@+id/monsterItemLevel"
+        android:textSize="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"

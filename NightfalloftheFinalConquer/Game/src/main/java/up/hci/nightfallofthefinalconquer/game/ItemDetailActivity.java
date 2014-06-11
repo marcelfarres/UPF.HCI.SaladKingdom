@@ -1,49 +1,59 @@
 package up.hci.nightfallofthefinalconquer.game;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 import up.hci.nightfallofthefinalconquer.game.adapters.MonsterItemAdapter;
+import up.hci.nightfallofthefinalconquer.game.classes.Item;
 import up.hci.nightfallofthefinalconquer.game.classes.Monster;
+import up.hci.nightfallofthefinalconquer.game.managers.ItemManager;
 import up.hci.nightfallofthefinalconquer.game.managers.MonsterManager;
 
 /**
- * Created by desire on 05/06/2014.
+ * Created by pacific on 11/06/2014.
  */
-public class MonstersListActivity extends Activity {
+public class ItemDetailActivity extends Activity {
     ListView listview;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.monster_list);
+        setContentView(R.layout.item_detail);
 
         setToolbarButtons();
 
-        listview = (ListView) findViewById(R.id.list_monsters);
+        Bundle bundle = this.getIntent().getExtras();
+        int itemId = bundle.getInt("ItemId");
 
-        ArrayList<Monster> monsterList = MonsterManager.getInstance().getMonsters();
-        listview.setAdapter(new MonsterItemAdapter(this, monsterList));
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                TextView id = (TextView) view.findViewById(R.id.monsterItemId);
+        Item item = ItemManager.getInstance().getItem(itemId);
 
-                Bundle b = new Bundle();
-                b.putInt("MonsterId", Integer.valueOf(id.getText().toString()) );
-                startToolbarActivity(MonsterDetailActivity.class, b);
-            }
-        });
+        TextView item_name = (TextView) findViewById(R.id.item_name);
+        item_name.setText( item.getName() );
+
+        TextView item_hp = (TextView) findViewById(R.id.HP_value);
+        item_hp.setText( String.valueOf(item.getStats().getHp()) );
+
+        TextView item_mp = (TextView) findViewById(R.id.MP_value);
+        item_mp.setText( String.valueOf(item.getStats().getMp()) );
+
+        TextView item_stg = (TextView) findViewById(R.id.ATK_value);
+        item_stg.setText( String.valueOf(item.getStats().getStg()) );
+
+        TextView item_spd = (TextView) findViewById(R.id.SP_value);
+        item_spd.setText( String.valueOf(item.getStats().getSpd()) );
+
+        TextView item_def = (TextView) findViewById(R.id.DEF_value);
+        item_def.setText( String.valueOf(item.getStats().getDef()) );
+
+
+
+//        TextView monster_hp = (TextView) findViewById(R.id.HP_value_monster);
+//        monster_hp.setText( monster.getStats().getHp() );
 
         /*TextView total_monsters = (TextView) findViewById(R.id.number_total_monsters);
         total_monsters.setText(monsterList.size());*/
@@ -77,26 +87,16 @@ public class MonstersListActivity extends Activity {
         });
 
         //clicar al boto monsters del toolbar
-//        (findViewById(R.id.button_monsters)).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startToolbarActivity(MonstersListActivity.class);
-//            }
-//        });
+        (findViewById(R.id.button_monsters)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(MonstersListActivity.class);
+            }
+        });
     }
 
     public void startToolbarActivity(java.lang.Class<?> cls) {
         Intent i = new Intent(this, cls);
         startActivity(i);
-    }
-
-    public void startToolbarActivity(java.lang.Class<?> cls, Bundle bundle) {
-        Intent i = new Intent(this, cls);
-        i.putExtras(bundle);
-        startActivity(i);
-    }
-
-    public void alert(String title, String message, String button){
-        new AlertDialog.Builder(this).setTitle(title).setMessage(message).setNeutralButton(button, null).show();
     }
 }

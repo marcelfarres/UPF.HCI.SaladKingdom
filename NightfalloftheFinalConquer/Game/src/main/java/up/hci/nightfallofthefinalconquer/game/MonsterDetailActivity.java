@@ -65,7 +65,7 @@ public class MonsterDetailActivity extends Activity {
         (findViewById(R.id.button_item)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToolbarActivity(ItemsActivity.class);
+                startToolbarActivity(ItemListActivity.class);
             }
         });
 

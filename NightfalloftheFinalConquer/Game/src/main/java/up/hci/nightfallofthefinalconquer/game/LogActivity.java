@@ -29,7 +29,7 @@ public class LogActivity extends Activity {
         (findViewById(R.id.button_item)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToolbarActivity(ItemsActivity.class);
+                startToolbarActivity(ItemListActivity.class);
             }
         });
 

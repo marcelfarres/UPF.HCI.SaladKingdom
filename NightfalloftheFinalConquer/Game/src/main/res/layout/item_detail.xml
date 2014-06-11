@@ -131,22 +131,13 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/description_item"
+        android:id="@+id/item_name"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:layout_gravity="left|center_vertical"
         android:textSize="20sp"
         android:layout_marginTop="57dp"
-        android:text="holaaaaaa">
+        android:text="">
 
         </TextView>
-
-    <Button
-        android:layout_width="356dp"
-        android:layout_height="wrap_content"
-        android:text="button_team"
-        android:id="@+id/button_team"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="105dp"
-        android:background="#506"/>
 </FrameLayout>

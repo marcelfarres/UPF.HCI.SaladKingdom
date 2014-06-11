@@ -74,6 +74,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Entity;");
         db.execSQL("DROP TABLE IF EXISTS MonsterStatus;");
         db.execSQL("DROP TABLE IF EXISTS Monster;");
+        db.execSQL("DROP TABLE IF EXISTS Equipment;");
     }
 
     public void createDatabase(SQLiteDatabase db) {
@@ -134,6 +135,7 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                 "    equipped boolean NOT NULL,\n" +
                 "    FOREIGN KEY (id_entity) REFERENCES Entity (id)\n" +
                 ");");
+        addEquipments(db, 10);
     }
 
     public void addMonsterStatus(SQLiteDatabase db) {
@@ -202,8 +204,8 @@ public class NFCSQLiteHelper extends SQLiteOpenHelper {
                             "VALUES (" +
                             i + "," +
                             (10 + i) + "," +
-                            "true," +
-                            "true" +
+                            "1," +
+                            "1" +
                             ");"
             );
         }

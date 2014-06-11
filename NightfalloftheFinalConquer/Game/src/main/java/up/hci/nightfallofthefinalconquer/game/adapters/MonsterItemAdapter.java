@@ -56,7 +56,7 @@ public class MonsterItemAdapter extends BaseAdapter {
         TextView lvl = (TextView) vi.findViewById(R.id.monsterItemLevel);
         TextView id = (TextView) vi.findViewById(R.id.monsterItemId);
         name.setText(data.get(position).getName());
-        lvl.setText(String.valueOf(data.get(position).getStats().getLvl()));
+        lvl.setText("Level:" + String.valueOf(data.get(position).getStats().getLvl()));
         id.setText(String.valueOf(data.get(position).getId()));
         return vi;
     }

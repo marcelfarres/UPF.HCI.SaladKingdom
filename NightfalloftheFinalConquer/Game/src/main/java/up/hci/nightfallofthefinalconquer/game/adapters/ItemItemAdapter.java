@@ -7,17 +7,20 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import up.hci.nightfallofthefinalconquer.game.R;
+import up.hci.nightfallofthefinalconquer.game.classes.Item;
 
 /**
  * Created by pacific on 10/06/2014.
  */
 public class ItemItemAdapter extends BaseAdapter {
     Context context;
-    String[] data;
+    ArrayList<Item> data;
     private static LayoutInflater inflater = null;
 
-    public ItemItemAdapter(Context context, String[] data) {
+    public ItemItemAdapter(Context context, ArrayList<Item> data) {
         // TODO Auto-generated constructor stub
         this.context = context;
         this.data = data;
@@ -28,13 +31,13 @@ public class ItemItemAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return data.length;
+        return data.size();
     }
 
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
-        return data[position];
+        return data.get(position);
     }
 
     @Override
@@ -49,8 +52,12 @@ public class ItemItemAdapter extends BaseAdapter {
         View vi = convertView;
         if (vi == null)
             vi = inflater.inflate(R.layout.item_list_item, null);
-        TextView text = (TextView) vi.findViewById(R.id.itemItemName);
-        text.setText(data[position]);
+        TextView name = (TextView) vi.findViewById(R.id.itemItemName);
+        TextView lvl = (TextView) vi.findViewById(R.id.itemItemLevel);
+        TextView id = (TextView) vi.findViewById(R.id.itemItemId);
+        name.setText(data.get(position).getName());
+        lvl.setText("Level:" + String.valueOf(data.get(position).getStats().getLvl()));
+        id.setText(String.valueOf(data.get(position).getId()));
         return vi;
     }
 }
