@@ -215,12 +215,12 @@ public class main extends Activity {
         });
 
         //clicar al boto map del toolbar
-        /*(findViewById(R.id.button_item)).setOnClickListener(new OnClickListener() {
+        (findViewById(R.id.button_map)).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToolbarActivity(LogActivity.class);
+                startToolbarActivity(MapActivity.class);
             }
-        });*/
+        });
 
         //clicar al boto monsters del toolbar
         (findViewById(R.id.button_monsters)).setOnClickListener(new OnClickListener() {
