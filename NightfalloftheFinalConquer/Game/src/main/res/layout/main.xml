@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#ff338002"
     android:id="@+id/fullscreen_content"
     tools:context="example.nightfall_of_the_final_conquer.app.home">
 
@@ -17,7 +17,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="269dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#00000000">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -51,8 +52,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="130dp"
                 android:text="+"
+                android:textColor="#fff"
                 android:textSize="30sp"
-                android:background="#506" />
+                android:background="#ff030066" />
 
             <TextView
                 android:id="@+id/name_player"
@@ -167,7 +169,8 @@
         android:layout_width="382dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_marginTop="88dp">
+        android:layout_marginTop="88dp"
+        android:background="#00000000">
 
     </TableLayout>
 

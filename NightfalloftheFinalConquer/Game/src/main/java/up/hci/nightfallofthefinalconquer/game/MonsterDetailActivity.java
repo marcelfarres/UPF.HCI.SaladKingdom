@@ -78,20 +78,20 @@ public class MonsterDetailActivity extends Activity {
         });
 
         //clicar al boto map del toolbar
-        /*(findViewById(R.id.button_item)).setOnClickListener(new OnClickListener() {
+        (findViewById(R.id.button_map)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startToolbarActivity(LogActivity.class);
+                startToolbarActivity(MapActivity.class);
             }
-        });*/
+        });
 
         //clicar al boto monsters del toolbar
-//        (findViewById(R.id.button_monsters)).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startToolbarActivity(MonstersListActivity.class);
-//            }
-//        });
+        (findViewById(R.id.button_monsters)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToolbarActivity(MonstersListActivity.class);
+            }
+        });
     }
 
     public void startToolbarActivity(java.lang.Class<?> cls) {

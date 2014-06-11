@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#0099cc"
+    android:background="#00000000"
     tools:context="example.nightfall_of_the_final_conquer.app.home">
 
         <RelativeLayout
@@ -34,39 +34,36 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:text="Log"
                     android:textSize="17sp"
                     android:textColor="#FFF"
                     android:id="@+id/button_log"
                     android:gravity="center"
                     android:layout_gravity="left|bottom"
-                    android:background="#040"
+                    android:background="@drawable/log_icon"
                     android:clickable="true"
                     android:layout_weight="1" />
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:text="Map"
                     android:textSize="17sp"
                     android:textColor="#FFF"
                     android:gravity="center"
                     android:id="@+id/button_map"
                     android:layout_gravity="left|bottom"
-                    android:background="#005"
+                    android:background="@drawable/map_icon"
                     android:clickable="true"
                     android:layout_weight="1"/>
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:text="Monsters"
                     android:textSize="17sp"
                     android:textColor="#FFF"
                     android:gravity="center"
                     android:id="@+id/button_monsters"
                     android:layout_gravity="left|bottom"
-                    android:background="#CC0"
+                    android:background="@drawable/monster_icon"
                     android:clickable="true"
                     android:layout_weight="1"/>
 
