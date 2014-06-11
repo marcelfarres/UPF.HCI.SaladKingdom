@@ -18,7 +18,9 @@
             android:layout_gravity="center_horizontal|top"
             android:id="@+id/list_items"
             android:fadeScrollbars="false"
-            android:clickable="true" >
+            android:clickable="true"
+            android:background="@drawable/paginalibro"
+            >
         </ListView>
 
 </FrameLayout>

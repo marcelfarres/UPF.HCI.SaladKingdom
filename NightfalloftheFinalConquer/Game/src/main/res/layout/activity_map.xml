@@ -5,21 +5,28 @@
     android:background="#0099cc"
     tools:context="example.nightfall_of_the_final_conquer.app.home">
 
-    <com.google.android.maps.MapView
-        android:id="@+id/MyMapView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"
-        android:apiKey="AIzaSyA-6AD7aESVZxTjmpFAuWRl43xqzPvqjeM"
-    />
-
     <include layout="@layout/toolbar_menu"
         android:id="@+id/toolbar"
         android:layout_height="match_parent"
         android:layout_width="wrap_content" />
 
 
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
 
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="420dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/map_image">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 
 </FrameLayout>
