@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#ff338002"
     tools:context="example.nightfall_of_the_final_conquer.app.home">
 
 
@@ -19,7 +19,9 @@
         android:layout_height="wrap_content"
         android:orientation = "vertical"
         android:id="@+id/table_skill_point"
-        android:layout_gravity="center_horizontal|top">
+        android:layout_gravity="center_horizontal|top"
+
+        >
 
         <LinearLayout
             android:keepScreenOn="true"
@@ -63,7 +65,8 @@
             android:layout_height="wrap_content"
             android:orientation = "horizontal"
             android:id="@+id/hp_skill_point_row"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            >
 
             <TextView
                 android:layout_width="350dp"

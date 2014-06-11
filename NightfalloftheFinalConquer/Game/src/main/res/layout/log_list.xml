@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#ff338002"
     tools:context="example.nightfall_of_the_final_conquer.app.home">
 
     <include layout="@layout/toolbar_menu"
@@ -27,7 +27,8 @@
         android:id="@+id/list_zones"
         android:fadeScrollbars="false"
         android:clickable="true"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:background="#ff338002">
     </ListView>
 
     <TextView
